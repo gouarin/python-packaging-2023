@@ -1,0 +1,14 @@
+format: jb-book
+root: index
+parts:
+  - caption: Présentation générale
+    chapters:
+      - file: talk
+  - caption: Session pratique
+    chapters:
+      - file: practical_session/01-structure
+      - file: practical_session/02-format-et-type
+      - file: practical_session/03-linter
+      - file: practical_session/04-documentation
+      - file: practical_session/05-tests
+      - file: practical_session/06-distribution
