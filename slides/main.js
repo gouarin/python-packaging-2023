@@ -13,7 +13,7 @@ import RevealMenu from './plugin.js'
 
 function get_theme_ext(href)
 {
-  if (href == "/packaging_2023/theme/dark.css")
+  if (href == "/packaging_2023/slides/theme/dark.css")
   {
     return "dark";
   }
@@ -58,8 +58,8 @@ deck.initialize({
   menu: {
     themes: true,
     themes: [
-      {name: 'dark', theme: '/packaging_2023/theme/dark.css'},
-      {name: 'light', theme: '/packaging_2023/theme/light.css'}
+      {name: 'dark', theme: '/packaging_2023/slides/theme/dark.css'},
+      {name: 'light', theme: '/packaging_2023/slides/theme/light.css'}
     ],
     path: 'theme',
   },
