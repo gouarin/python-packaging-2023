@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "reveal.js": "^4.2.1",
+    "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "mystmd": "^1.1.26",
+    "highlight.js": "^11.5.1",
+    "reveal.js-menu": "^2.1.0"
+  }}

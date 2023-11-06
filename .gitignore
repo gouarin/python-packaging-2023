@@ -1,0 +1,4 @@
+.ipynb_checkpoints
+_build
+node_modules
+.DS_Store
