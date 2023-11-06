@@ -8,7 +8,7 @@ project:
     A la fin de cette présentation, nous passerons à une session pratique permettant d'assembler toutes ces pièces sur une application jouet. Nous nous appuierons sur les outils disponibles sur github et un compte sera donc nécessaire pour pouvoir réaliser l'atelier.
   keywords: []
   authors: [loïc Gouarin]
-  # github:
+  github: https://github.com/gouarin/python-packaging-2023
   # bibliography: []
 site:
   template: book-theme
