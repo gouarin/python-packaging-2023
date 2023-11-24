@@ -3,7 +3,7 @@ version: 1
 project:
   title: "Distribuer son application python"
   keywords: []
-  authors: [loïc Gouarin]
+  authors: [Loïc Gouarin]
   github: https://github.com/gouarin/python-packaging-2023
   license:
     code: MIT

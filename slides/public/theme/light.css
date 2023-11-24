@@ -502,7 +502,12 @@ section.has-dark-background h6 {
 
 .sl-block {
   display: grid;
+  border-style: solid;
+  border-color: black;
+  grid-gap: 10px;
+  /* grid-template-rows: 1fr 3fr 1fr; */
   grid-template-rows: 70px 550px 50px;
+  /* grid-template-rows: 10vh 80vh 10vh; */
 }
 
 .header {
@@ -514,6 +519,7 @@ section.has-dark-background h6 {
   grid-row: 2;
   align-self: center;
   text-align: left;
+  align-content: stretch;
 }
 
 .footer {
