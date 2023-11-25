@@ -6,4 +6,4 @@ title: Présentation
 ```{iframe} ./slides/index.html
 ```
 
-[full screen](./slides/index.html)
+<a href="./slides/index.html">Full screen</a>
