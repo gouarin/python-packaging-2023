@@ -1,0 +1,14 @@
+name: packaging-environment
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
+  - sphinx
+  - nbsphinx
+  - jupyterlab-myst
+  - pytest
+  - pytest-cov
+  - pytest-mpl
+  - pylint
+  - ruff

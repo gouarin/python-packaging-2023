@@ -12,4 +12,4 @@ parts:
       - file: practical_session/03-format-et-linter
       - file: practical_session/04-sphinx
       - file: practical_session/05-pytest
-      - file: practical_session/06-distribution
+      - file: practical_session/06-github-actions

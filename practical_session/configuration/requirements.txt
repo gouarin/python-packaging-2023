@@ -1,0 +1,11 @@
+numpy
+matplotlib
+sphinx
+nbsphinx
+jupyterlab
+jupyterlab_myst
+pytest
+pylint
+ruff
+pytest-cov
+pytest-mpl
