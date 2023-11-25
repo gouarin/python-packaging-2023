@@ -9,3 +9,4 @@ pylint
 ruff
 pytest-cov
 pytest-mpl
+build

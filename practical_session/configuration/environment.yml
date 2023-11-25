@@ -12,3 +12,6 @@ dependencies:
   - pytest-mpl
   - pylint
   - ruff
+  - build
+  - conda-build
+  - anaconda-client
