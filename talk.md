@@ -6,4 +6,4 @@ title: Présentation
 ```{iframe} ./slides/index.html
 ```
 
-<a href="./slides/index.html">Full screen</a>
+[Full screen](https://gouarin.github.io/python-packaging-2023/slides/index.html)
