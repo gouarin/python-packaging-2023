@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splinart"
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = ["numpy", "matplotlib"]
+
+license = { file = "LICENSE" }
+
+description = "spline art generator"
+authors = [{ name = "Loic Gouarin", email = "loic.gouarin@gmail.com" }]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Cython',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Topic :: Software Development',
+    'Topic :: Scientific/Engineering',
+    'Typing :: Typed',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "splinart.version.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["splinart*"]
+
+[project.scripts]
+splinart = "splinart.scripts.cli_splinart:main"
+
+[project.urls]
+Source = "https://github.com/gouarin/splinart"

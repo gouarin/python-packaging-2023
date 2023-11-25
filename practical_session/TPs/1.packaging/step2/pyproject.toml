@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splinart"
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = ["numpy", "matplotlib"]
+
+[tool.setuptools.dynamic]
+version = { attr = "splinart.version.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["splinart*"]
+
+[project.scripts]
+splinart = "splinart.scripts.cli_splinart:main"
