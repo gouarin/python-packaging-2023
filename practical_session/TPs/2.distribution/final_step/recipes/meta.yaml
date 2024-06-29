@@ -1,0 +1,36 @@
+{% set version = "0.1.0" %}
+
+package:
+  name: splinart
+  version: {{ version }}
+
+source:
+  - url: file://{{ RECIPE_DIR }}/../dist/splinart-{{ version }}.tar.gz
+
+build:
+  number: 0
+  script: "{{PYTHON}} -m pip install . --no-deps -vv"
+  noarch: python
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy
+    - matplotlib
+
+test:
+  imports:
+    - splinart
+
+about:
+  home: http://github.com/gouarin/splinart
+  license: BSD
+  license_family: BSD
+  summary: "spline art generator"
+  description: "spline art generator"
+
+extra:
+  recipe-maintainers: "loic.gouarin@gmail.com"
