@@ -5,6 +5,7 @@
 """
 spline module
 """
+
 import numpy as np
 
 

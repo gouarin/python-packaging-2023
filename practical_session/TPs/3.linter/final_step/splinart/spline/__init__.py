@@ -3,6 +3,8 @@
 #
 # License: BSD 3 clause
 """
-color
+spline
 """
-DEFAULT_COLOR = (0.0, 0.41568627450980394, 0.61960784313725492, 1.0)
+
+from .spline import spline
+from .splint import splint

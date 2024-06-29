@@ -5,6 +5,7 @@
 """
 Compute module
 """
+
 import numpy as np
 
 from .spline import spline, splint
