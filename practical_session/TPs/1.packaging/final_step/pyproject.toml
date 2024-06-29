@@ -6,7 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "splinart"
 dynamic = ["version"]
 requires-python = ">=3.8"
-dependencies = ["numpy", "matplotlib"]
 
 license = { file = "LICENSE" }
 
@@ -48,3 +47,17 @@ splinart = "splinart.scripts.cli_splinart:main"
 
 [project.urls]
 Source = "https://github.com/gouarin/splinart"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+splinart = { path = ".", editable = true }
+
+[tool.pixi.dependencies]
+numpy = ">=2.0.0,<2.1"
+matplotlib = ">=3.8.4,<3.9"
+
+[tool.pixi.feature.pypi-release.dependencies]
+build = ">=0.7.0,<0.8"

@@ -21,7 +21,6 @@ def draw_pixel(img, xs, ys, scale_color=.0005, color=[0.0, 0.41568627450980394, 
 
 def save_img(img, path, filename):
     plt.imshow(img)
-    plt.axes().set_aspect('equal')
     plt.axis('off')
 
     if not os.path.exists(path):
@@ -31,6 +30,5 @@ def save_img(img, path, filename):
 
 def show_img(img):
     plt.imshow(img)
-    plt.axes().set_aspect('equal')
     plt.axis('off')
     plt.show()
