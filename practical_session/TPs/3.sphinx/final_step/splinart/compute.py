@@ -2,9 +2,7 @@
 #     Loic Gouarin <loic.gouarin@gmail.com>
 #
 # License: BSD 3 clause
-"""
-Compute module
-"""
+"""Material to update the output image using a cunbic spline equation."""
 import numpy as np
 
 from .spline import spline, splint
@@ -14,7 +12,26 @@ from .color import DEFAULT_COLOR
 
 def update_path(path, periodic=False, scale_value=0.00001):
     """
-    update the path
+    Update the path of the spline.
+
+    We move each point of the path by a random vector
+    defined inside a circle where
+
+        - the center is the point of the path
+        - the radius is a random number between [-1, 1]
+
+    Parameters
+    ----------
+    path : np.ndarray
+        The y coordinate of the cubic spline.
+
+    periodic : bool
+        If True, the first and the last points of the
+        path are the same (the default value is False).
+
+    scale_value : float
+        Rescale the random radius (default value is 0.00001).
+
     """
     n = path.shape[0]
     scale = np.arange(n) * scale_value
@@ -40,7 +57,45 @@ def update_img(
     scale_value=0.00001,
 ):
     """
-    update image
+    Update the image using a cubic spline on a shape.
+
+    Parameters
+    ----------
+    img : np.ndarray
+        The output image.
+
+    path : np.ndarray
+        The y coordinate of the cubic spline if x is not None,
+        the coordinates of the cubic spline if x is None.
+
+    x : np.ndarray
+        The x coordinates of the cubic spline if given.
+        (the default value is None)
+
+    xs_func : function
+        The function that return the x coordinate of the sampling points
+        where to compute the y coordinates given the spline equation.
+
+    nrep : int
+        Number of iteration (default is 300).
+
+    periodic : bool
+        Define if the first and last points of the path must be equal
+        (default is True).
+
+    scale_color : float
+        Scale the given color (default is 0.005).
+
+    color : list(4)
+        Define the RGBA color to plot the spline.
+
+    scale_value : float
+        Rescale the random radius (default value is 0.00001).
+
+    See Also
+    --------
+    update_path
+
     """
     xspline = xs_func()
 

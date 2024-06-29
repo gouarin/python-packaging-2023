@@ -6,7 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "splinart"
 dynamic = ["version"]
 requires-python = ">=3.8"
-dependencies = ["numpy", "matplotlib"]
 
 license = { file = "LICENSE" }
 
@@ -48,3 +47,58 @@ splinart = "splinart.scripts.cli_splinart:main"
 
 [project.urls]
 Source = "https://github.com/gouarin/splinart"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
+
+[tool.pixi.pypi-dependencies]
+splinart = { path = ".", editable = true }
+
+[tool.pixi.feature.pypi-release.tasks]
+sdist = "python -m build --sdist"
+bdist = "python -m build --wheel"
+twine = { cmd = "twine upload -r testpypi dist/*", depends-on = [
+    "sdist",
+    "bdist",
+] }
+
+[tool.pixi.dependencies]
+numpy = ">=2.0.0,<2.1"
+matplotlib = ">=3.8.4,<3.9"
+
+[tool.pixi.feature.pypi-release.dependencies]
+build = ">=0.7.0,<0.8"
+twine = ">=5.1.1,<5.2"
+
+[tool.pixi.feature.conda-release.dependencies]
+conda-build = ">=24.5.1,<24.6"
+anaconda-client = ">=1.12.3,<1.13"
+
+[tool.pixi.feature.conda-release.tasks]
+conda-build = "conda build --croot $HOME/conda-build recipes"
+conda-publish = { cmd = "anaconda upload $HOME/conda-build/noarch/splinart-*.tar.bz2", depends-on = [
+    "conda-build",
+] }
+
+[tool.pixi.feature.linter.dependencies]
+pylint = ">=2.7.2,<2.8"
+ruff = ">=0.5.0,<0.6"
+
+[tool.pixi.feature.sphinx.dependencies]
+sphinx = ">=7.3.5,<7.4"
+nbsphinx = ">=0.9.4,<0.10"
+myst-parser = ">=3.0.1,<3.1"
+numpydoc = ">=1.7.0,<1.8"
+nbsphinx-link = ">=1.3.0,<1.4"
+pydata-sphinx-theme = ">=0.15.4,<0.16"
+docutils = "0.20.*"
+ipython = ">=8.26.0,<8.27"
+
+[tool.pixi.feature.sphinx.tasks]
+build-doc = "cd doc; make html"
+
+[tool.pixi.environments]
+publish = ["pypi-release", "conda-release"]
+linter = ["linter"]
+sphinx = ["sphinx"]

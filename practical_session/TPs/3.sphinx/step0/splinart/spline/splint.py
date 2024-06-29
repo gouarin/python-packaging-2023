@@ -2,15 +2,31 @@
 #     Loic Gouarin <loic.gouarin@gmail.com>
 #
 # License: BSD 3 clause
-"""
-splint module
-"""
+"""Integration of a cubic spline."""
 import numpy as np
 
 
 def splint(xs, ys, y2s, x, y):
     """
-    splint function
+    Evaluate a sample on a cubic pline.
+
+    Parameters
+    ----------
+    xs
+        The x coordinates of the cubic spline.
+    ys
+        The y coordinates of the cubic spline.
+    y2s
+        The second derivative of the cubic spline.
+    x
+        The sample where to evaluation the cubic spline.
+    y
+        The y coordinates of the sample.
+
+    See Also
+    --------
+    splinart.spline.spline
+
     """
     khi = np.searchsorted(xs, x)
     klo = khi - 1

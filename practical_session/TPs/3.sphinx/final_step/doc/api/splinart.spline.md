@@ -25,6 +25,7 @@
 
 ```{eval-rst}
 .. automodule:: splinart.spline
+    :no-index:
     :members:
     :undoc-members:
     :show-inheritance:

@@ -2,7 +2,7 @@
 #     Loic Gouarin <loic.gouarin@gmail.com>
 #
 # License: BSD 3 clause
-"""
-shape
-"""
+"""Shape package."""
 from .base import line, circle
+
+__all__ = ["line", "circle"]
