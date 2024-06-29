@@ -165,3 +165,5 @@ texinfo_documents = [
      author, 'splinart', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+myst_enable_extensions = ["dollarmath", "amsmath"]

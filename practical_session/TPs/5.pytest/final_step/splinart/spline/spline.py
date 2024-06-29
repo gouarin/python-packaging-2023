@@ -2,15 +2,27 @@
 #     Loic Gouarin <loic.gouarin@gmail.com>
 #
 # License: BSD 3 clause
-"""
-spline module
-"""
+"""Cubic spline."""
 import numpy as np
 
 
 def spline(xs, ys):
     """
-    return spline
+    Return the second derivative of a cubic spline.
+
+    Parameters
+    ----------
+    xs : np.ndarray
+        The x coordinate of the cubic spline.
+
+    ys : np.ndarray
+        The y coordinate of the cubic spline.
+
+    Returns
+    -------
+    np.ndarray
+        The second derivative of the cubic spline.
+
     """
     n = xs.shape[0]
     u_i = np.zeros_like(ys)
