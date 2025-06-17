@@ -61,15 +61,15 @@ Dans PyPi, elles peuvent être de deux sortes
        :::{note}
        C'est là que les systèmes d'intégration entre en jeu et plus particulièrement [github action](https://docs.github.com/fr/actions).
 
-       On pourra regarder notamment [cbuildwhell](https://cibuildwheel.readthedocs.io).
+       On pourra regarder notamment [cbuildwheel](https://cibuildwheel.readthedocs.io).
        :::
 
 :::{exercise}
-Ajoutez le paquet `build` via la commande `pixi` dans une `feature` que l'on nommera `pypi-release` (voir https://pixi.sh/v0.20.1/reference/cli/#add).
+Ajoutez le paquet `build` via la commande `pixi` dans une `feature` que l'on nommera `pypi-release` (voir https://pixi.sh/latest/reference/cli/pixi/add/#arg---feature).
 :::
 
 :::{exercise}
-Créez l'environnement associé qui portera le nom `publish` (voir https://pixi.sh/latest/reference/cli/#project-environment-add)
+Créez l'environnement associé qui portera le nom `publish` (voir https://pixi.sh/latest/tutorials/multi_environment/)
 :::
 
 :::{exercise}
@@ -78,7 +78,7 @@ Créez l'environnement associé qui portera le nom `publish` (voir https://pixi.
 :::
 
 :::{note}
-Voir https://pixi.sh/latest/reference/cli/#task-add.
+Voir https://pixi.sh/latest/reference/cli/pixi/task/add/.
 :::
 
 :::{exercise}

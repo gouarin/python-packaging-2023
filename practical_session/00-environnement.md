@@ -24,9 +24,13 @@ Voici une liste d'outils que vous pouvez utiliser pour créer vos environnements
 
   Cet outil ressemble à ce que l'on peut trouver lorsqu'on utilise `nodejs` à savoir que la configuration de votre environnement va évoluer en fonction de ce que vous installez et ce que vous désinstallez. Tous ces changements sont décrits dans un fichier permettant de reproduire un environnement à l'identique.
 
+- [uv](https://docs.astral.sh/uv/)
+
+   uv est un gestionnaire de paquets Python nouvelle génération et multiplateforme, développé par Astral (l’équipe derrière Ruff), et écrit en Rust pour des performances exceptionnelles. Il se veut un remplaçant rapide et moderne de pip, pip-tools, poetry, virtualenv, pyenv, pipx, et même twine, en offrant une interface unique et cohérente pour gérer l’installation de paquets, la résolution des dépendances, la gestion des environnements virtuels, et même l’installation de différentes versions de Python
+
 - [pixi](https://pixi.sh/)
 
-    Nouveau venu, cet outil permet là encore de faire des environnements à la `nodejs` où la configuration est incluse   dans le répertoire de développement en utilisant les packages se trouvant sur conda. Il n'est donc pas dédié uniquement aux développements Python et est bien plus généraliste.
+    Pixi est un gestionnaire de paquets moderne et multiplateforme, conçu pour gérer les environnements et dépendances Python (et d’autres langages) de manière rapide, fiable et reproductible. Développé en Rust et basé sur l’écosystème conda, il permet d’installer des paquets depuis conda et PyPI, tout en résolvant automatiquement les dépendances et en générant un fichier de verrouillage (lock file) pour garantir la reproductibilité des environnements. Il est également possible de définir des tâches personnalisées pour automatiser les workflows de développement.
 
 ## Définir ses dépendances via `requirements.txt` ou `environment.yml`
 
@@ -35,7 +39,7 @@ Si nous avons vu précédemment que certains outils pouvaient écrire leur propr
 - `requirements.txt` est un fichier permettant de décrire les dépendances et peut être utilisé avec l'ensemble des outils cités.
 - `environment.yml` est utilisé par les outils s'appuyant sur des packages `conda`.
 
-### Example de fichier `requirements.txt`
+### Exemple de fichier `requirements.txt`
 
 :::{card}
 :header: Sans versions définies
@@ -59,7 +63,7 @@ jupyterlab>4.0,<4.1
 
 :::
 
-### Example de fichier `environment.yml`
+### Exemple de fichier `environment.yml`
 
 :::{card}
 :header: Sans versions définies
@@ -141,13 +145,49 @@ Installer les dépendances pour cet atelier en utilisant soit `pipenv`, soit `ma
 Les fichiers `requirements.txt` et `environment.yml` se trouvent dans le répertoire `practical_session/configuration`.
 :::
 
+## Utilisation de uv
+
+Il est également possible de construire son environnement via `uv` de manière incrémentale en ajoutant au fur et à mesure les dépendances de son projet et en créant un ensemble de tâches nous facilitant le travail.
+
+La première chose à faire est d'installer `uv` en suivant ce lien: https://docs.astral.sh/uv/getting-started/installation/
+
+Placez-vous dans le répertoire `practical_session`, puis initialiser l'environnement de développement en utilisant la commande suivante
+
+```bash
+uv init
+```
+
+Vous avez à présent un fichier `pyproject.toml` qui initialise votre environnement de développement. Il contient normalement au moins les éléments suivants
+
+```toml
+[project]
+name = "project-name"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+```
+
+Vous pouvez facilement ajouter vos dépendances à l'aide de la commande `uv add`.
+
+```bash
+uv add numpy
+```
+
+Vous pouvez mettre à jour votre environnement avec la commande
+
+```bash
+uv sync
+```
+
 ## Utilisation de pixi
 
 Il est également possible de construire son environnement via `pixi` de manière incrémentale en ajoutant au fur et à mesure les dépendances de son projet et en créant un ensemble de tâches nous facilitant le travail.
 
 La première chose à faire est d'installer `pixi` en suivant ce lien: https://prefix.dev/docs/pixi/overview#installation
 
-Placez vous dans le répertoire `practical_session`, puis initialiser l'environnement de développement en utilisant la commande suivante
+Placez-vous dans le répertoire `practical_session`, puis initialiser l'environnement de développement en utilisant la commande suivante
 
 ```bash
 pixi init

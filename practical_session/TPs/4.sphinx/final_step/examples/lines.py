@@ -6,7 +6,7 @@ import numpy as np
 import splinart as spl
 
 img_size, channels = 1000, 4
-img = np.ones((img_size, img_size, channels)), dtype=np.float32)
+img = np.ones((img_size, img_size, channels), dtype=np.float32)
 
 lo, up = .2, .8
 path = []

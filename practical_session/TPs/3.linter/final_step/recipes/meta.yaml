@@ -1,9 +1,11 @@
+{% set version = "0.1.0" %}
+
 package:
   name: splinart
-  version: "0.1.0"
+  version: {{ version }}
 
 source:
-  path: ../
+  - url: file://{{ RECIPE_DIR }}/../dist/splinart-{{ version }}.tar.gz
 
 build:
   number: 0

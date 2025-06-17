@@ -54,3 +54,36 @@ calculator-script = "calculator.command_line:main"
 
 [tool.setuptools.dynamic]
 version = { attr = "calculator.version.__version__" }
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+calculator = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+sdist = "python -m build --sdist"
+bdist = "python -m build --wheel"
+
+
+[tool.pixi.feature.conda-recipe.dependencies]
+anaconda-client = ">=1.12.3,<1.13"
+conda-build = ">=24.5.1,<24.6"
+
+[tool.pixi.feature.twine.dependencies]
+twine = ">=3.3.0,<3.4"
+
+[tool.pixi.feature.twine.tasks]
+pypi-release = { cmd = "twine upload --repository-url https://test.pypi.org/legacy/ dist/*", depends-on = [
+    "sdist",
+    "bdist",
+] }
+
+[tool.pixi.environments]
+release = ["conda-recipe"]
+twine = ["twine"]
+
+[tool.pixi.dependencies]
+cython = ">=3.0.10,<3.1"
+build = ">=0.7.0,<0.8"

@@ -5,5 +5,15 @@ node_modules
 __pycache__
 build
 *.c
+*.DS_Store
+*.lock
+*.so
 *.egg-info
 dist/
+practical_session/examples/linter
+practical_session/examples/tests
+output.png
+
+# pixi environments
+.pixi
+*.egg-info
