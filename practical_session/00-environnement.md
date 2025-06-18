@@ -185,7 +185,7 @@ uv sync
 
 Il est également possible de construire son environnement via `pixi` de manière incrémentale en ajoutant au fur et à mesure les dépendances de son projet et en créant un ensemble de tâches nous facilitant le travail.
 
-La première chose à faire est d'installer `pixi` en suivant ce lien: https://prefix.dev/docs/pixi/overview#installation
+La première chose à faire est d'installer `pixi` en suivant ce lien: https://pixi.sh/latest/installation/
 
 Placez-vous dans le répertoire `practical_session`, puis initialiser l'environnement de développement en utilisant la commande suivante
 
