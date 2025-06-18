@@ -3,7 +3,7 @@ matplotlib
 sphinx
 nbsphinx
 jupyterlab
-jupyterlab_myst
+jupyterlab-myst
 pytest
 pylint
 ruff
