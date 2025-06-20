@@ -191,7 +191,7 @@ Les actions sont déclenchées à partir de ce qu'il y a dans le répertoire `.g
 git checkout -b init-ci
 ```
 
-Il faut maintenant créer le premier worflow en ajoutant le fichier `.github/worflows/ci.yml`dont le contenut est
+Il faut maintenant créer le premier worflow en ajoutant le fichier `.github/workflows/ci.yml`dont le contenut est
 
 ```yaml
 name: ci
